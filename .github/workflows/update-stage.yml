@@ -1,0 +1,22 @@
+name: Push main code to QA branch
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: sync qa
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - uses: connor-baer/action-sync-branch@main
+        with:
+          branch: stage
+          token: ${{ secrets.REBASE_TOKEN }}
+          force: true
