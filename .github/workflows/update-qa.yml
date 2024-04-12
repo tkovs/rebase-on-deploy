@@ -19,4 +19,4 @@ jobs:
         with:
           branch: qa
           token: ${{ secrets.REBASE_TOKEN }}
-          force: false
+          force: true
