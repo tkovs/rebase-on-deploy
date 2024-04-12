@@ -13,14 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     name: sync qa
     steps:
-      - name: git-checkout
-        uses: actions/checkout@v2
-
-      - name: push
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          REPO: self
-          BRANCH: qa
-          FOLDER: ./
-          GITHUB_TOKEN: ${{ secrets.REBASE_TOKEN }}
-          MESSAGE: 'Build: ({sha}) {msg}'
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - uses: connor-baer/action-sync-branch@main
+        with:
+          branch: qa
+          token: ${{ secrets.REBASE_TOKEN }}
+          force: false
