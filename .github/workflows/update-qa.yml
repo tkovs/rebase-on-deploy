@@ -11,7 +11,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: build (production)
+    name: sync qa
     steps:
       - name: git-checkout
         uses: actions/checkout@v2
