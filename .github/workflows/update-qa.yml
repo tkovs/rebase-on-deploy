@@ -15,8 +15,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@master
-      - uses: connor-baer/action-sync-branch@main
+      - name: Update the qa branch
+        uses: connor-baer/action-sync-branch@main
         with:
           branch: qa
-          token: ${{ secrets.REBASE_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           force: true
