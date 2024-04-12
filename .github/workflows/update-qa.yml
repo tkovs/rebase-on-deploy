@@ -21,6 +21,6 @@ jobs:
         env:
           REPO: self
           BRANCH: qa
-          FOLDER: .
+          FOLDER: teste
           GITHUB_TOKEN: ${{ secrets.REBASE_TOKEN }}
           MESSAGE: 'Build: ({sha}) {msg}'
